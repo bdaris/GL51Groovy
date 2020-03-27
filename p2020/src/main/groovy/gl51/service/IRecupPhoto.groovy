@@ -2,6 +2,6 @@ package gl51.service
 
 import gl51.data.Photo
 
-interface RecupPhoto {
+interface IRecupPhoto {
     Photo fetchPhoto()
 }
