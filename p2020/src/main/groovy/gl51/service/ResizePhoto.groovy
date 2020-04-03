@@ -1,4 +1,5 @@
 package gl51.service
 
-class ResizePhoto {
+interface ResizePhoto {
+    void getAndResizePhoto()
 }

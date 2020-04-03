@@ -1,4 +1,5 @@
 package gl51.service
 
-class StoreCloud {
+interface StoreCloud {
+    void storePhoto()
 }
