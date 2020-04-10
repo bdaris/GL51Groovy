@@ -1,11 +1,11 @@
-package gl51.service
+package gl51.service.Implementation
 
 import gl51.data.Photo
-import gl51.service.IStoreCloud
+import gl51.service.StoreCloud
 
-@Singleton
-class StoreCloudImpl implements IStoreCloud{
-    Photo uploadToCloud(Photo photo){
-        return null;
-    }
+
+class StoreCloudImpl implements StoreCloud {
+    @Override
+    void storePhoto() {
+        }
 }

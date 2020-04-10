@@ -1,7 +1,9 @@
 package gl51.movie.service.Impl
 
-import gl51.movie.service.MovieRegistry
+import gl51.movie.data.Movie
+import gl51.movie.service.MovieClient
 import io.micronaut.test.annotation.MicronautTest
+import io.micronaut.test.annotation.MockBean
 import spock.lang.Specification
 
 import javax.inject.Inject
@@ -27,10 +29,15 @@ class MovieRegistryImplTest extends Specification {
             registry.AddMovieToFavorite("aaaa")
         then:
             registry.ListFavorite().size() == 1
+            registry.ListFavorite().find{it.titre == 'my movie'}
     }
 
-    /*void "test qui ne plante plus"(){
-        expect:
-            true == true
-    }*/
+
+    @MockBean(MovieClientImpl)
+    MovieClient movieClient() {
+        def mock = Mock(MovieClient)
+        mock.getMovieDetail("aaaa") >> new Movie(imdbID: 'aaaa', titre: 'my movie')
+        mock
+    }
+
 }
