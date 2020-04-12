@@ -19,7 +19,7 @@ class MovieController {
 
     @Get("/")
     List<Movie> index() {
-        registry.listFavorite()
+        []
     }
 
     @Post('/')
