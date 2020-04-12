@@ -50,10 +50,4 @@ class MovieControllerSpec extends Specification {
         content.find { it.titre == 'mymovie' && it.imdbID == "aaaa" }
     }
 
-    @MockBean(MovieClientImpl)
-    MovieClient movieClient() {
-        def mock = Mock(MovieClient)
-        mock.getMovieDetail("aaaa") >> new Movie(imdbID: "aaaa", titre: 'mymovie')
-        mock
-    }
 }
