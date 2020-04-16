@@ -4,6 +4,7 @@ import gl51.movie.data.Movie
 import gl51.movie.data.MovieRequest
 import gl51.movie.service.Impl.MovieClientImpl
 import gl51.movie.service.MovieClient
+import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.test.annotation.MicronautTest
@@ -43,11 +44,11 @@ class MovieControllerSpec extends Specification {
         HttpResponse response = client.toBlocking().exchange(
                 HttpRequest.POST("/movie", new MovieRequest(imdbID: "aaaa"))
         )
-        Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
-        def content = flowable.firstElement().blockingGet()
+        Flowable Flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
+        def content = Flowable.firstElement().blockingGet()
         then:
-        response.status == HttpStatus.CREATED
-        content.find { it.titre == 'mymovie' && it.imdbID == "aaaa" }
+            response.status == HttpStatus.CREATED
+            content.find { it.titre == 'mymovie' && it.imdbID == "aaaa" }
     }
 
     @MockBean(MovieClientImpl)
