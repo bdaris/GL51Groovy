@@ -7,8 +7,6 @@ import javax.inject.Singleton
 
 @Singleton
 class IpServiceImpl implements IpService {
-
-    @Override
     Ip fetchIp() {
         return null
     }
