@@ -1,12 +1,13 @@
-package gl51.service.implementation
+package gl51.service
 
 import gl51.data.Ip
-import gl51.service.IpService
 
 import javax.inject.Singleton
 
 @Singleton
-class IpServiceImpl implements IpService {
+class IPServiceImpl implements gl51.service.IPService {
+
+    @Override
     Ip fetchIp() {
         return null
     }
