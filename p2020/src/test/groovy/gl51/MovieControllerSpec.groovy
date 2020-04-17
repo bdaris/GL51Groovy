@@ -2,7 +2,6 @@ package gl51
 
 import gl51.movie.data.Movie
 import gl51.movie.data.MovieRequest
-import gl51.movie.service.impl.MovieClientImpl
 import gl51.movie.service.MovieClient
 import gl51.movie.service.impl.MovieClientImpl
 import io.micronaut.http.HttpRequest
