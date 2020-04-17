@@ -1,4 +1,4 @@
-package gl51.movie.service.Impl
+package gl51.movie.service.impl
 
 import gl51.movie.data.Movie
 import gl51.movie.service.MovieClient
@@ -16,12 +16,12 @@ class MovieRegistryImpl implements MovieRegistry {
     private MovieClient movieClient
 
     @Override
-    void AddMovieToFavorite(String imdbID) {
+    void addMovieToFavorite(String imdbID) {
         internalRegistry << movieClient.getMovieDetail(imdbID)
     }
 
     @Override
-    List<Movie> ListFavorite() {
+    List<Movie> listFavorite() {
         internalRegistry
     }
 }

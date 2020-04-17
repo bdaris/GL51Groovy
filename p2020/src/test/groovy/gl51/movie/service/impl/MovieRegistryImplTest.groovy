@@ -1,4 +1,4 @@
-package gl51.movie.service.Impl
+package gl51.movie.service.impl
 
 import gl51.movie.data.Movie
 import gl51.movie.service.MovieClient
@@ -21,15 +21,15 @@ class MovieRegistryImplTest extends Specification {
 
     void "favorites should be empty"(){
         expect:
-        registry.ListFavorite() == []
+        registry.listFavorite() == []
     }
 
     void "add a favorite should fill in the database"(){
         when:
-            registry.AddMovieToFavorite("aaaa")
+            registry.addMovieToFavorite("aaaa")
         then:
-            registry.ListFavorite().size() == 1
-            registry.ListFavorite().find{it.titre == 'my movie'}
+            registry.listFavorite().size() == 1
+            registry.listFavorite().find{it.titre == 'my movie'}
     }
 
 
